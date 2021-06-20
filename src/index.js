@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { StoreProvider } from './store/Store';
+import { initialState, okrReducer } from './store/okr.reducer';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider initialState={initialState} reducer={okrReducer}>
+      <App />
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
