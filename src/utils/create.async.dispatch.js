@@ -8,5 +8,5 @@ export const createAsyncDispatch = (dispatch) => {
       return action(dispatch);
     }
     return dispatch(action);
-  }
-}
+  };
+};

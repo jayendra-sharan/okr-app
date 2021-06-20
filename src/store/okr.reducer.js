@@ -1,13 +1,13 @@
 /**
  * @fileoverview contains reducer and initial state of OKR.
  */
-import { OKR_ACTIONS } from "./okr.actions"
+import { OKR_ACTIONS } from "./okr.actions";
 
 export const initialState = {
   inProgress: false,
   okrList: [],
-  errorMessage: ''
-}
+  errorMessage: "",
+};
 
 export const okrReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,15 +20,15 @@ export const okrReducer = (state = initialState, action) => {
       return {
         ...state,
         okrList: action.payload.data,
-        inProgress: false
+        inProgress: false,
       };
     case OKR_ACTIONS.FETCH_OKR_FAILED:
       return {
         ...state,
         errorMessage: action.payload,
-        inProgress: false
+        inProgress: false,
       };
     default:
       return state;
   }
-}
+};

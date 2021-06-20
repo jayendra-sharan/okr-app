@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import { StoreProvider } from './store/Store';
-import { initialState, okrReducer } from './store/okr.reducer';
+import { StoreProvider } from "./store/Store";
+import { initialState, okrReducer } from "./store/okr.reducer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +13,7 @@ ReactDOM.render(
       <App />
     </StoreProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import Okr from './container/Okr';
-import './App.css';
+import Okr from "./container/Okr";
+import "./App.css";
 
 function App() {
   return (

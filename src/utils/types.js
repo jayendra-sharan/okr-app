@@ -2,7 +2,7 @@
  * @fileoverview extends PropTypes to create maintainable data types.
  */
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const okr = PropTypes.shape({
   id: PropTypes.string.isRequired,
@@ -18,7 +18,7 @@ const okr = PropTypes.shape({
 const stateOfApp = PropTypes.shape({
   inProgress: PropTypes.bool.isRequired,
   okrList: PropTypes.arrayOf(okr),
-  errorMessage: ''
+  errorMessage: "",
 });
 
 const types = {
@@ -32,8 +32,8 @@ const types = {
   _stateOfApp: stateOfApp.isRequired,
   _children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
-}
+};
 
 export default types;
