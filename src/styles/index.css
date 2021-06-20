@@ -13,3 +13,9 @@ code {
 }
 
 /* Variables */
+:root {
+  --connector-color: #e7eef5;
+  --arrow-color: #393939;
+  --alt-bg-color: #f9fbfd;
+  --primary-font-color: #4a4a4a;
+}
