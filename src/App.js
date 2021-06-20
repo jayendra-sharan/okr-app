@@ -1,11 +1,11 @@
 import React from "react";
 
-import Okr from "./container/Okr";
-import "./App.css";
+import Okr from "./container/okr/Okr";
+import "./styles/app.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Okr />
     </div>
   );

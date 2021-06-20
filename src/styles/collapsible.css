@@ -1,0 +1,40 @@
+.card-wrapper {
+  border: 1px solid #e3f4fb;
+  position: relative;
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.children {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.collapse-button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  width: 25px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 4px;
+}
+
+.close {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.open {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}

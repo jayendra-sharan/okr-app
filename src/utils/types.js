@@ -34,6 +34,12 @@ const types = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  _formattedOkrs: PropTypes.objectOf(
+    PropTypes.shape({
+      objective: okr.isRequired,
+      keyResults: PropTypes.arrayOf(okr),
+    })
+  ).isRequired,
 };
 
 export default types;

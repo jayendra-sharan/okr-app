@@ -1,6 +1,7 @@
 /**
  * @fileoverview contains reducer and initial state of OKR.
  */
+import { createCustomObjective } from "../utils/constants";
 import { OKR_ACTIONS } from "./okr.actions";
 
 export const initialState = {
@@ -19,7 +20,7 @@ export const okrReducer = (state = initialState, action) => {
     case OKR_ACTIONS.FETCH_OKR_SUCCESS:
       return {
         ...state,
-        okrList: action.payload.data,
+        okrList: [...action.payload.data, createCustomObjective()],
         inProgress: false,
       };
     case OKR_ACTIONS.FETCH_OKR_FAILED:
