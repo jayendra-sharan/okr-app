@@ -1,7 +1,7 @@
 /**
  * @fileoverview a custom hook to add logger to useReducer.
  */
-import { useEffect, useMemo, useReducer, useRef } from "react"
+import { useEffect, useMemo, useReducer, useRef } from "react";
 import { createAsyncDispatch } from "./create.async.dispatch";
 
 /**
@@ -13,15 +13,18 @@ export const useEnhancedReducer = (...args) => {
   let prevState = useRef(initialState);
   const [state, dispatch] = useReducer(...args);
 
-  const asyncDispatch = useMemo(() => createAsyncDispatch(dispatch), [dispatch]);
+  const asyncDispatch = useMemo(
+    () => createAsyncDispatch(dispatch),
+    [dispatch]
+  );
 
   useEffect(() => {
     if (state !== initialState) {
-      console.log('Prev state: ', prevState.current);
-      console.log('Next state: ', state);
+      console.log("Prev state: ", prevState.current);
+      console.log("Next state: ", state);
     }
     prevState.current = state;
   }, [state]);
 
   return [state, asyncDispatch];
-}
+};
