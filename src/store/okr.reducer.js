@@ -1,7 +1,6 @@
 /**
  * @fileoverview contains reducer and initial state of OKR.
  */
-import { createCustomObjective } from "../utils/constants";
 import { OKR_ACTIONS } from "./okr.actions";
 
 export const initialState = {

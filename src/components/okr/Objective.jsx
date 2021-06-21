@@ -9,7 +9,11 @@ import Category from "../category/Category";
 const getTitleComponent = (serialNumber, objective) => {
   return (
     <React.Fragment>
-      <img className="objective-img title-img" src="./user.svg" />
+      <img
+        alt={objective.title}
+        className="objective-img title-img"
+        src="./user.svg"
+      />
       <OkrTitle classes="objective-title" okr={objective}>
         {`${serialNumber}. ${objective.title}`}
         <Category category={objective.category} />

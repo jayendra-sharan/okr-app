@@ -1,31 +1,50 @@
 import React, { PureComponent } from "react";
-import types from "../../utils/types";
+import PropTypes from "prop-types";
 
-class ErrorBoundary extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-    };
+export default class ErrorBoundary extends PureComponent {
+  state = {
+    error: "",
+    errorInfo: "",
+    hasError: false,
+  };
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
   }
-
   componentDidCatch(error, errorInfo) {
-    this.setState({
-      error,
-    });
+    // eslint-disable-next-line no-console
+    console.log({ error, errorInfo });
+    this.setState({ errorInfo });
   }
-
   render() {
-    const { error } = this.state;
-    if (error) {
-      return <div>Something Went Wrong!!!</div>;
+    const { hasError, errorInfo } = this.state;
+    if (hasError) {
+      return (
+        <div className="error-wrapper">
+          <div className="card-header">
+            <p>
+              There was an error in loading this page.{" "}
+              <span
+                style={{ cursor: "pointer", color: "#0077FF" }}
+                onClick={() => {
+                  window.location.reload();
+                }}
+              >
+                Reload this page
+              </span>{" "}
+            </p>
+          </div>
+          <div className="card-body">
+            <details className="error-details">
+              <summary>Click for error details</summary>
+              {errorInfo && errorInfo.componentStack.toString()}
+            </details>
+          </div>
+        </div>
+      );
     }
     return this.props.children;
   }
 }
-
 ErrorBoundary.propTypes = {
-  children: types._children,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 };
-
-export default ErrorBoundary;

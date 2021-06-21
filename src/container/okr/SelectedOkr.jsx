@@ -5,14 +5,10 @@ import { selectOkr } from "../../store/okr.actions";
 import types from "../../utils/types";
 
 const SelectedOkr = ({ children, okr }) => {
-  const [state, dispatch] = useStore();
+  const [_, dispatch] = useStore();
 
   const onClick = () => {
     dispatch(selectOkr(okr.id));
-  };
-
-  const clear = () => {
-    dispatch(selectOkr(""));
   };
 
   return (

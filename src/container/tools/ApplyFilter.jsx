@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from "react";
+import React, { memo } from "react";
 
 import Selector from "../../components/selector/Selector";
 import { applyFilter } from "../../store/okr.actions";
