@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import Objective from "./Objective";
 import types from "../../utils/types";
@@ -22,4 +22,4 @@ OkrList.propTypes = {
   okrList: types._formattedOkrs,
 };
 
-export default OkrList;
+export default memo(OkrList);

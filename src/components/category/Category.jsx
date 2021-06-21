@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import types from "../../utils/types";
 
 const Category = ({ category }) => {
@@ -13,4 +13,4 @@ Category.propTypes = {
   category: types._string,
 };
 
-export default Category;
+export default memo(Category);

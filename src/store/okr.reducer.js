@@ -9,6 +9,10 @@ export const initialState = {
   okrList: [],
   errorMessage: "",
   filter: "",
+  selected: {
+    objective: null,
+    keyResult: null,
+  },
 };
 
 export const okrReducer = (state = initialState, action) => {
@@ -35,7 +39,29 @@ export const okrReducer = (state = initialState, action) => {
         ...state,
         filter: action.payload,
       };
+    case OKR_ACTIONS.SELECT_OKR:
+      return {
+        ...state,
+        selected: selectOkr(state, action),
+      };
     default:
       return state;
+  }
+};
+
+const selectOkr = (state, action) => {
+  if (action.payload === "") {
+    return {
+      objective: null,
+      keyResult: null,
+    };
+  } else {
+    const keyResult = state.okrList.find((okr) => okr.id === action.payload);
+    return {
+      objective: state.okrList.find(
+        (okr) => okr.id === keyResult.parent_objective_id
+      ),
+      keyResult,
+    };
   }
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import types from "../../utils/types";
 
 const Selector = ({ options, selected, updateFilter }) => {
@@ -22,4 +22,4 @@ Selector.propTypes = {
   selected: types._string,
   updateFilter: types._function,
 };
-export default Selector;
+export default memo(Selector);

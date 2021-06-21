@@ -1,20 +1,23 @@
-import React from "react";
-import ErrorBoundary from "./components/error/ErrorBoundary";
+import React, { memo } from "react";
 
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import Okr from "./container/okr/Okr";
+import Modal from "./components/modal/Modal";
+import ErrorBoundary from "./components/error/ErrorBoundary";
 
 import "./styles/app.css";
 
 function App() {
   return (
     <div className="app">
-      <header />
+      <Header />
       <ErrorBoundary>
         <Okr />
       </ErrorBoundary>
-      <footer />
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default memo(App);

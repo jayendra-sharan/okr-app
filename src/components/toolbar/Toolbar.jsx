@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import ApplyFilter from "../../container/tools/ApplyFilter";
 import "../../styles/toolbar.css";
@@ -11,4 +11,4 @@ const Toolbar = () => {
   );
 };
 
-export default Toolbar;
+export default memo(Toolbar);

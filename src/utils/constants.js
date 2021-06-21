@@ -12,3 +12,12 @@ export const createCustomObjective = () => ({
   metric_target: "",
   parent_objective_id: "",
 });
+
+export const displayPropertyMap = {
+  category: "Category",
+  title: "Title",
+  archived: "Archived",
+  metric_name: "Metric Name",
+  metric_start: "Metric Start",
+  metric_target: "Metric Target",
+};

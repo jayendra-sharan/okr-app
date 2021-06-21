@@ -1,5 +1,5 @@
 import { createCustomObjective } from "../../utils/constants";
-import { curry } from "../../utils/utils";
+import { curry, isNullOrEmpty } from "../../utils/utils";
 
 export const isFetchInProgress = (state) => state.inProgress;
 
@@ -62,4 +62,13 @@ export const getOkrListFromState = (state) => {
   const keyResultList = createFilteredList(filterdList)(isKeyResult);
 
   return updateKeyResultsInObjective(objectiveKeyResultHash, keyResultList);
+};
+
+export const getSelectedOkrFromState = (state) => {
+  const { selected } = state;
+  const { objective, keyResult } = selected;
+  return {
+    objective,
+    keyResult,
+  };
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 
 import "./../../styles/collapsible.css";
 import types from "../../utils/types";
@@ -25,4 +25,4 @@ Collapsible.propTypes = {
   title: types._object,
 };
 
-export default Collapsible;
+export default memo(Collapsible);

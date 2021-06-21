@@ -6,6 +6,7 @@ export const OKR_ACTIONS = {
   FETCH_OKR_SUCCESS: "APP/OKR/FETCH_OKR_SUCCESS",
   FETCH_OKR_FAILED: "APP/OKR/FETCH_OKR_FAILED",
   APPLY_FILTER: "APP/OKR/APPLY_FILTER",
+  SELECT_OKR: "APP/OKR/SELECT_OKR",
 };
 
 const fetchOkrSuccess = (data) => ({
@@ -37,4 +38,9 @@ export const getOkrList = (dispatch) => {
 export const applyFilter = (filter) => ({
   type: OKR_ACTIONS.APPLY_FILTER,
   payload: filter,
+});
+
+export const selectOkr = (id) => ({
+  type: OKR_ACTIONS.SELECT_OKR,
+  payload: id,
 });

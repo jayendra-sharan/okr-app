@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import types from "../../utils/types";
 import "../../styles/loader.css";
@@ -20,4 +20,4 @@ FullPageLoader.defaultProps = {
   text: "Please wait...",
 };
 
-export default FullPageLoader;
+export default memo(FullPageLoader);

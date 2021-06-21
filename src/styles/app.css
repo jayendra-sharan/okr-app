@@ -4,20 +4,32 @@
 
 header {
   background-color: var(--header-bg-color);
+  color: var(--heading-color);
   height: 75px;
   margin: 0 -120px;
+  padding: 20px;
+  text-align: center;
 }
 
 footer {
-  height: 120px;
+  color: var(--heading-color);
   background-color: var(--footer-bg-color);
+  height: 120px;
   margin: 0 -120px;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .okr-title {
   min-height: 75px;
   line-height: 75px;
   font-size: 1.2em;
+  cursor: pointer;
 }
 
 .okr-title .title {
@@ -80,6 +92,19 @@ footer {
   font-weight: bold;
 }
 
+.fieldset {
+  display: flex;
+  padding: 2px 5px;
+}
+
+.fieldset .okr-label {
+  font-weight: bold;
+}
+
+.fieldset .okr-value {
+  margin-left: 10px;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .app {
     margin: 0 20px;
@@ -88,6 +113,7 @@ footer {
   header,
   footer {
     margin: 0 -20px;
+    color: var(--heading-color);
   }
 }
 

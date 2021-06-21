@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import KeyResult from "./KeyResult";
 import types from "../../utils/types";
@@ -10,7 +10,7 @@ const getTitleComponent = (serialNumber, objective) => {
   return (
     <React.Fragment>
       <img className="objective-img title-img" src="./user.svg" />
-      <OkrTitle classes="objective-title">
+      <OkrTitle classes="objective-title" okr={objective}>
         {`${serialNumber}. ${objective.title}`}
         <Category category={objective.category} />
       </OkrTitle>
@@ -36,4 +36,4 @@ Objective.propTypes = {
   serialNumber: types._number,
 };
 
-export default Objective;
+export default memo(Objective);

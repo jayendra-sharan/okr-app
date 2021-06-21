@@ -18,17 +18,23 @@ const okr = PropTypes.shape({
 const stateOfApp = PropTypes.shape({
   inProgress: PropTypes.bool.isRequired,
   okrList: PropTypes.arrayOf(okr),
-  errorMessage: "",
-  filter: "",
+  errorMessage: PropTypes.string,
+  filter: PropTypes.string,
+  selected: PropTypes.shape({
+    objective: okr,
+    keyResult: okr,
+  }),
 });
 
 const types = {
   _function: PropTypes.func.isRequired,
+  _ofunction: PropTypes.func,
   _object: PropTypes.object.isRequired,
   _boolean: PropTypes.bool.isRequired,
   _number: PropTypes.number.isRequired,
   _string: PropTypes.string.isRequired,
   _okr: okr.isRequired,
+  _ookr: okr,
   _okrList: PropTypes.arrayOf(okr).isRequired,
   _stateOfApp: stateOfApp.isRequired,
   _children: PropTypes.oneOfType([
