@@ -5,6 +5,7 @@ import types from "../../utils/types";
 import Collapsible from "../collapse/Collapsible";
 import OkrTitle from "./OkrTitle";
 import Category from "../category/Category";
+import Highlighted from "../../container/okr/Highlighted";
 
 const getTitleComponent = (serialNumber, objective) => {
   return (
@@ -15,7 +16,7 @@ const getTitleComponent = (serialNumber, objective) => {
         src="./user.svg"
       />
       <OkrTitle classes="objective-title" okr={objective}>
-        {`${serialNumber}. ${objective.title}`}
+        <Highlighted text={`${serialNumber}. ${objective.title}`} />
         <Category category={objective.category} />
       </OkrTitle>
     </React.Fragment>
