@@ -25,7 +25,10 @@ const getTitleComponent = (serialNumber, objective) => {
 const Objective = ({ serialNumber, objective, keyResults }) => {
   return (
     <div>
-      <Collapsible title={getTitleComponent(serialNumber, objective)}>
+      <Collapsible
+        title={getTitleComponent(serialNumber, objective)}
+        isCollapsible={keyResults.length !== 0}
+      >
         {keyResults.map((keyResult, index) => (
           <KeyResult key={keyResult.id} keyResult={keyResult} index={index} />
         ))}

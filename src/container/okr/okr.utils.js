@@ -47,16 +47,42 @@ const createObejctiveKeyResultHash = (objectiveList) =>
 const getFilteredList = (list, key, value) =>
   value ? list.filter((kr) => kr[key] === value) : list;
 
+const filterListOnQuery = (list, query) =>
+  list.filter((okr) => okr.title.match(query));
+
+const removeDuplicates = (list) =>
+  list.filter(
+    (okr, index, arr) => arr.findIndex((o) => o.id === okr.id) === index
+  );
+
+const addParentInQueriedList = (list, queryResult) => {
+  // if (list.length === queryResult.length) return list;
+  const parentObjectiveIdList = queryResult.map(
+    (okr) => okr.parent_objective_id
+  );
+  const objectiveList = list.filter(
+    (okr) => parentObjectiveIdList.indexOf(okr.id) > -1
+  );
+  return removeDuplicates([...objectiveList, ...queryResult]);
+};
+
 export const getOkrListFromState = (state) => {
   const { okrList, filter, query } = state;
+  if (!okrList.length) {
+    return okrList;
+  }
 
   const regex = new RegExp(query, "ig");
-  const queriedOkr = query
-    ? okrList.filter((okr) => okr.title.match(regex))
-    : okrList;
+
+  const queriedOkrList = filterListOnQuery(okrList, query);
+
+  const queriedOkrListWithParent = addParentInQueriedList(
+    okrList,
+    queriedOkrList
+  );
 
   const filterdList = [
-    ...getFilteredList(queriedOkr, "category", filter),
+    ...getFilteredList(queriedOkrListWithParent, "category", filter),
     createCustomObjective(),
   ];
 
