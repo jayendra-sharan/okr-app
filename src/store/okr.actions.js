@@ -5,6 +5,7 @@ export const OKR_ACTIONS = {
   FETCH_OKR_LIST: "APP/OKR/FETCH_OKR_LIST",
   FETCH_OKR_SUCCESS: "APP/OKR/FETCH_OKR_SUCCESS",
   FETCH_OKR_FAILED: "APP/OKR/FETCH_OKR_FAILED",
+  APPLY_FILTER: "APP/OKR/APPLY_FILTER",
 };
 
 const fetchOkrSuccess = (data) => ({
@@ -32,3 +33,8 @@ export const getOkrList = (dispatch) => {
       });
   };
 };
+
+export const applyFilter = (filter) => ({
+  type: OKR_ACTIONS.APPLY_FILTER,
+  payload: filter,
+});

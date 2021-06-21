@@ -10,7 +10,7 @@ const OkrTitle = ({ children, classes }) => {
 };
 
 OkrTitle.propTypes = {
-  text: types._string,
+  children: types._children,
   classes: types._string,
 };
 

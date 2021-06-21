@@ -1,6 +1,8 @@
 .card-wrapper {
   border: 1px solid #e3f4fb;
   position: relative;
+  border-radius: var(--border-radius);
+  margin-bottom: 5px;
 }
 
 .parent {

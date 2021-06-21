@@ -2,6 +2,18 @@
   margin: 0 120px;
 }
 
+header {
+  background-color: var(--header-bg-color);
+  height: 75px;
+  margin: 0 -120px;
+}
+
+footer {
+  height: 120px;
+  background-color: var(--footer-bg-color);
+  margin: 0 -120px;
+}
+
 .okr-title {
   min-height: 75px;
   line-height: 75px;
@@ -58,15 +70,34 @@
   margin-top: 35px;
 }
 
+.category {
+  background: #a03c64;
+  color: #ffffff;
+  font-size: 0.5em;
+  border-radius: 5px;
+  padding: 4px 10px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .app {
     margin: 0 20px;
+  }
+
+  header,
+  footer {
+    margin: 0 -20px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
   .app {
     margin: 0 5px;
+  }
+  header,
+  footer {
+    margin: 0 -5px;
   }
   .parent {
     padding: 0 5px;
@@ -90,6 +121,10 @@
   /* CSS */
   .app {
     margin: 0 5px;
+  }
+  header,
+  footer {
+    margin: 0 -5px;
   }
   .parent {
     padding: 0 5px;

@@ -4,12 +4,16 @@ import KeyResult from "./KeyResult";
 import types from "../../utils/types";
 import Collapsible from "../collapse/Collapsible";
 import OkrTitle from "./OkrTitle";
+import Category from "../category/Category";
 
-const getTitleComponent = (serialNumber, title) => {
+const getTitleComponent = (serialNumber, objective) => {
   return (
     <React.Fragment>
       <img className="objective-img title-img" src="./user.svg" />
-      <OkrTitle classes="objective-title">{`${serialNumber}. ${title}`}</OkrTitle>
+      <OkrTitle classes="objective-title">
+        {`${serialNumber}. ${objective.title}`}
+        <Category category={objective.category} />
+      </OkrTitle>
     </React.Fragment>
   );
 };
@@ -17,7 +21,7 @@ const getTitleComponent = (serialNumber, title) => {
 const Objective = ({ serialNumber, objective, keyResults }) => {
   return (
     <div>
-      <Collapsible title={getTitleComponent(serialNumber, objective.title)}>
+      <Collapsible title={getTitleComponent(serialNumber, objective)}>
         {keyResults.map((keyResult, index) => (
           <KeyResult key={keyResult.id} keyResult={keyResult} index={index} />
         ))}

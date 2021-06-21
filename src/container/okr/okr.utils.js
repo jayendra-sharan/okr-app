@@ -1,9 +1,10 @@
+import { createCustomObjective } from "../../utils/constants";
 import { curry } from "../../utils/utils";
 
 export const isFetchInProgress = (state) => state.inProgress;
 
-const isObjective = (okr) => !okr.parent_objective_id;
-const isKeyResult = (okr) => okr.parent_objective_id;
+export const isObjective = (okr) => !okr.parent_objective_id;
+export const isKeyResult = (okr) => okr.parent_objective_id;
 
 const createFilteredList = curry((okrList, filterType) =>
   okrList.filter(filterType)
@@ -43,14 +44,22 @@ const createObejctiveKeyResultHash = (objectiveList) =>
     };
   }, {});
 
+const getFilteredList = (list, key, value) =>
+  value ? list.filter((kr) => kr[key] === value) : list;
+
 export const getOkrListFromState = (state) => {
-  const { okrList } = state;
+  const { okrList, filter } = state;
+
+  const filterdList = [
+    ...getFilteredList(okrList, "category", filter),
+    createCustomObjective(),
+  ];
 
   const objectiveKeyResultHash = createObejctiveKeyResultHash(
-    createFilteredList(okrList)(isObjective)
+    createFilteredList(filterdList)(isObjective)
   );
 
-  const keyResultList = createFilteredList(okrList)(isKeyResult);
+  const keyResultList = createFilteredList(filterdList)(isKeyResult);
 
   return updateKeyResultsInObjective(objectiveKeyResultHash, keyResultList);
 };

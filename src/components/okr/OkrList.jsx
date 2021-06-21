@@ -4,7 +4,6 @@ import Objective from "./Objective";
 import types from "../../utils/types";
 
 const OkrList = ({ okrList }) => {
-  console.log(okrList, "here");
   return (
     <div>
       {Object.keys(okrList).map((key, index) => (

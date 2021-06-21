@@ -19,6 +19,7 @@ const stateOfApp = PropTypes.shape({
   inProgress: PropTypes.bool.isRequired,
   okrList: PropTypes.arrayOf(okr),
   errorMessage: "",
+  filter: "",
 });
 
 const types = {
@@ -40,6 +41,7 @@ const types = {
       keyResults: PropTypes.arrayOf(okr),
     })
   ).isRequired,
+  _listOfString: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default types;

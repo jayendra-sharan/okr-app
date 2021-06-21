@@ -18,4 +18,7 @@ code {
   --arrow-color: #393939;
   --alt-bg-color: #f9fbfd;
   --primary-font-color: #4a4a4a;
+  --border-radius: 5px;
+  --header-bg-color: #000000;
+  --footer-bg-color: #333333;
 }
