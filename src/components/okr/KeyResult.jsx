@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import Highlighted from "../../container/okr/Highlighted";
 import types from "../../utils/types";
 import { getAlphaSequence } from "../../utils/utils";
 import OkrTitle from "./OkrTitle";
@@ -9,7 +10,7 @@ const KeyResult = ({ keyResult, index }) => {
       <div className="horizontal-line" />
       <OkrTitle classes="key-result-title" okr={keyResult}>
         <img className="title-img" src="./user.svg" />
-        {`${getAlphaSequence(index)}${keyResult.title}`}
+        <Highlighted text={`${getAlphaSequence(index)}${keyResult.title}`} />
       </OkrTitle>
     </div>
   );

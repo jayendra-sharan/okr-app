@@ -13,6 +13,7 @@ export const initialState = {
     objective: null,
     keyResult: null,
   },
+  query: "",
 };
 
 export const okrReducer = (state = initialState, action) => {
@@ -43,6 +44,11 @@ export const okrReducer = (state = initialState, action) => {
       return {
         ...state,
         selected: selectOkr(state, action),
+      };
+    case OKR_ACTIONS.SEARCH_OKR:
+      return {
+        ...state,
+        query: action.payload,
       };
     default:
       return state;

@@ -6,7 +6,7 @@ const Selector = ({ options, selected, updateFilter }) => {
     updateFilter && updateFilter(e.target.value);
   };
   return (
-    <select onChange={onChange} value={selected}>
+    <select className="tools" onChange={onChange} value={selected}>
       <option value="">Select a category</option>
       {options.map((f) => (
         <option key={f} value={f}>

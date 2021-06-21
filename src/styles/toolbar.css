@@ -6,3 +6,15 @@
   justify-content: flex-end;
   padding: 20px;
 }
+
+.tools {
+  margin: 0 15px;
+}
+
+.tools input {
+  border-radius: var(--border-radius);
+}
+
+.tools select {
+  border-radius: var(--border-radius);
+}

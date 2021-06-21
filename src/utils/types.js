@@ -24,6 +24,7 @@ const stateOfApp = PropTypes.shape({
     objective: okr,
     keyResult: okr,
   }),
+  query: "",
 });
 
 const types = {

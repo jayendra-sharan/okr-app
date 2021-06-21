@@ -7,6 +7,7 @@ export const OKR_ACTIONS = {
   FETCH_OKR_FAILED: "APP/OKR/FETCH_OKR_FAILED",
   APPLY_FILTER: "APP/OKR/APPLY_FILTER",
   SELECT_OKR: "APP/OKR/SELECT_OKR",
+  SEARCH_OKR: "APP/OKR/SEARCH_OKR",
 };
 
 const fetchOkrSuccess = (data) => ({
@@ -44,3 +45,11 @@ export const selectOkr = (id) => ({
   type: OKR_ACTIONS.SELECT_OKR,
   payload: id,
 });
+
+export const searchOkr = (query) => {
+  console.log(query, "query");
+  return {
+    type: OKR_ACTIONS.SEARCH_OKR,
+    payload: query,
+  };
+};

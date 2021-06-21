@@ -48,10 +48,15 @@ const getFilteredList = (list, key, value) =>
   value ? list.filter((kr) => kr[key] === value) : list;
 
 export const getOkrListFromState = (state) => {
-  const { okrList, filter } = state;
+  const { okrList, filter, query } = state;
+
+  const regex = new RegExp(query, "ig");
+  const queriedOkr = query
+    ? okrList.filter((okr) => okr.title.match(regex))
+    : okrList;
 
   const filterdList = [
-    ...getFilteredList(okrList, "category", filter),
+    ...getFilteredList(queriedOkr, "category", filter),
     createCustomObjective(),
   ];
 

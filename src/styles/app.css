@@ -105,6 +105,10 @@ footer a {
   margin-left: 10px;
 }
 
+.highlight-class {
+  background: #ffff00;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .app {
     margin: 0 20px;
