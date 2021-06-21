@@ -100,7 +100,7 @@ export const getHighlightedString = (str, query) => {
         str = tempStr.join("");
       }
     } else {
-      throw "Empty String";
+      throw new Error("Empty String");
     }
     return str;
   } catch (e) {

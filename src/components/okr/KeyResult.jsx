@@ -9,7 +9,7 @@ const KeyResult = ({ keyResult, index }) => {
     <div className="key-result">
       <div className="horizontal-line" />
       <OkrTitle classes="key-result-title" okr={keyResult}>
-        <img className="title-img" src="./user.svg" />
+        <img alt={keyResult.title} className="title-img" src="./user.svg" />
         <Highlighted text={`${getAlphaSequence(index)}${keyResult.title}`} />
       </OkrTitle>
     </div>
